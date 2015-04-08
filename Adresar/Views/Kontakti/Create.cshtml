@@ -1,0 +1,76 @@
+﻿@model Adresar.Models.Kontakt
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Novi kontakt</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Kontakt</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Ime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ime)
+            @Html.ValidationMessageFor(model => model.Ime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prezime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prezime)
+            @Html.ValidationMessageFor(model => model.Prezime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Grad)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Grad)
+            @Html.ValidationMessageFor(model => model.Grad)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Adresa)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Adresa)
+            @Html.ValidationMessageFor(model => model.Adresa)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Telefon)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Telefon)
+            @Html.ValidationMessageFor(model => model.Telefon)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <p>
+            <input type="submit" value="Unesi novi kontakt" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Povratak", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

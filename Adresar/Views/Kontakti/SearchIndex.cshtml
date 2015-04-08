@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Adresar.Models.Kontakt>
+
+@{
+    ViewBag.Title = "SearchIndex";
+}
+
+<h2>Pretraživanje</h2>
+
+
+<p>
+    @using (Html.BeginForm("SearchIndex", "Kontakti", FormMethod.Get))
+    {
+    <p>
+        Grad: @Html.DropDownList("kontaktGrad", "All")
+        Ime: @Html.TextBox("SearchString")
+        <input type="submit" value="Traži" />
+    </p>
+    }
+
+    
+
+    
+    
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Promjeni", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

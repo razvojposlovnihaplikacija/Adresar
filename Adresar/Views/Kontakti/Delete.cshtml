@@ -1,0 +1,37 @@
+﻿@model Adresar.Models.Kontakt
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Brisanje kontakta</h2>
+
+<h3>Jeste li sigurni da želite obrisati kontakt?</h3>
+<fieldset>
+    <legend>Kontakt</legend>
+
+   
+
+    <div class="display-field">
+        <p>     </p>
+        <p>     </p>
+        @Html.DisplayFor(model => model.Ime)
+        @Html.DisplayFor(model => model.Prezime)
+        <p>     </p>
+        @Html.DisplayFor(model => model.Grad)
+        <p>     </p>
+        @Html.DisplayFor(model => model.Adresa)
+        <p>     </p>
+        @Html.DisplayFor(model => model.Telefon)
+        <p>     </p>
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Obriši" /> |
+        @Html.ActionLink("Povratak", "Index")
+    </p>
+}

@@ -1,0 +1,57 @@
+﻿@model Adresar.Models.Kontakt
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalji</h2>
+
+<fieldset>
+    <legend>Kontakt</legend>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Ime)</b>
+        @Html.DisplayFor(model => model.Ime)
+        <p></p>
+    </div>
+    
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Prezime)</b>
+        @Html.DisplayFor(model => model.Prezime)
+        <p></p>
+    </div>
+    
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.Grad)</b>
+        @Html.DisplayFor(model => model.Grad)
+        <p></p>
+    </div>
+    
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.Adresa)</b>
+        @Html.DisplayFor(model => model.Adresa)
+        <p></p>
+    </div>
+    
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.Telefon)</b>
+        @Html.DisplayFor(model => model.Telefon)
+        <p></p>
+    </div>
+    
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Email)</b>
+        @Html.DisplayFor(model => model.Email)
+        
+    </div>
+    
+</fieldset>
+<p>
+    @Html.ActionLink("Promjeni", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Povratak", "Index")
+</p>
